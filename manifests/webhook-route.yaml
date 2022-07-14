@@ -1,0 +1,19 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: webhook-flask
+  name: webhook-flask
+  namespace: webhook-flask
+spec:
+  path: /webhook
+  port:
+    targetPort: 5000-tcp
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: webhook-flask
+    weight: 100
+  wildcardPolicy: None
