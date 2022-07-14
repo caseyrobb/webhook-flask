@@ -14,6 +14,4 @@ COPY . /app
 
 EXPOSE 5000
 
-#ENTRYPOINT ["python3 /app/app.py"]
-
 CMD ["python3", "-m", "flask", "run"]
