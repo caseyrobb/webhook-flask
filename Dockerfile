@@ -1,8 +1,8 @@
-FROM registry.access.redhat.com/ubi8
+FROM registry.access.redhat.com/ubi8/ubi-minimal
 
 MAINTAINER Casey Robb "casey.robb@redhat.com"
 
-RUN dnf update -y && dnf install python3 -y
+RUN microdnf update -y && microdnf install python3 -y
 
 COPY ./requirements.txt /app/requirements.txt
 
